@@ -1,5 +1,5 @@
 export const BUTTON_PRESSED = 'BUTTON_PRESSED';
 
-export const buttonPressed = () => ({
+export const buttonPress = () => ({
   type: BUTTON_PRESSED
 });

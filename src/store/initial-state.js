@@ -1,5 +1,5 @@
 export default {
-  buttonState: {
+  button: {
     pressed: false
   }
 };

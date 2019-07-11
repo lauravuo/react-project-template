@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { Route, Switch } from 'react-router'; // react-router v4/v5
+import { ConnectedRouter } from 'connected-react-router';
 
-import App from './containers/app';
-import store from './store';
+import store, { history } from './store';
+
+import NavBar from './components/nav-bar';
+import NoMatch from './components/no-match';
+import Home from './containers/home';
+import Page from './containers/page';
 
 const Root = () => (
   <Provider store={store}>
-    <App />
+    <ConnectedRouter history={history}>
+      <div>
+        <NavBar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/page" component={Page} />
+          <Route component={NoMatch} />
+        </Switch>
+      </div>
+    </ConnectedRouter>
   </Provider>
 );
 

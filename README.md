@@ -4,4 +4,4 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/lauravuo/react-project-template.svg)](https://greenkeeper.io/)
 
-Simple template for basic React app setup
+Template for React app setup

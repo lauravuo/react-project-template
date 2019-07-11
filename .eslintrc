@@ -15,6 +15,7 @@
       }
     ],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/forbid-prop-types": false,
     "import/no-extraneous-dependencies": [
       "error",
       { "devDependencies": ["**/*stories.js", "**/*test.js", "webpack/*"] }

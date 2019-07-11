@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rimraf build/ && webpack --config ./webpack/prod.js",
     "ci:automerge": "circleci-automerge --filter=\"^greenkeeper/\"",
-    "start": "webpack-dev-server --open --config ./webpack/dev.js",
+    "start": "webpack-dev-server --open \"Google Chrome\" --config ./webpack/dev.js",
     "storybook": "start-storybook",
     "test": "npm run test:lint && npm run test:unit",
     "test:lint": "eslint ./src --format codeframe",
@@ -38,6 +38,8 @@
     "react-router-dom": "5.0.1",
     "redux": "4.0.4",
     "redux-devtools-extension": "2.13.8",
+    "redux-observable": "^1.1.0",
+    "rxjs": "^6.5.2",
     "styled-components": "4.3.2"
   },
   "devDependencies": {

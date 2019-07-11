@@ -1,5 +1,7 @@
 import React from 'react';
 
-const App = () => <button type="button">Press</button>;
+import Button from '../components/button';
+
+const App = () => <Button />;
 
 export default App;

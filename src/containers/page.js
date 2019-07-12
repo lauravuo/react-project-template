@@ -17,7 +17,7 @@ Page.defaultProps = {
 };
 
 const mapStateWithProps = ({ user }) => ({
-  user: user
+  user
 });
 
 export default connect(mapStateWithProps)(Page);

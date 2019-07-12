@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 const Error = ({ error }) => (
@@ -8,6 +9,14 @@ const Error = ({ error }) => (
     )}
   </div>
 );
+
+Error.propTypes = {
+  error: PropTypes.object
+};
+
+Error.defaultProps = {
+  error: null
+};
 
 const mapStateToProps = ({ error }) => ({
   error

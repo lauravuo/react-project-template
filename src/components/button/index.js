@@ -6,7 +6,7 @@ import Icon from '../../../assets/baseline-fingerprint-24px.svg';
 
 const Button = ({ pressed, onPress }) => (
   <Container type="button" onClick={onPress} pressed={pressed}>
-    <img src={Icon} />
+    <img src={Icon} alt="Button icon" />
   </Container>
 );
 

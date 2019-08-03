@@ -1,4 +1,4 @@
-const url = 'http://localhost:8088';
+const url = 'http://localhost:80';
 
 module.exports = {
   'Home test': browser =>

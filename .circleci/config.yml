@@ -22,6 +22,7 @@ jobs:
   e2e:
     docker:
       - image: circleci/node:10.16.0-browsers
+        user: root
 
     steps:
       - checkout
@@ -29,8 +30,8 @@ jobs:
           keys:
             - npm-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run:
-        name: Install nginx
-        command: sudo apt-get update && sudo apt-get install nginx
+          name: Install nginx
+          command: sudo apt-get update && sudo apt-get install nginx && sudo service nginx restart
       - run:
           name: Install deps
           command: npm ci
@@ -39,10 +40,12 @@ jobs:
           command: npm run build
       - run:
           name: Copy files
-          command: cp ./build/* /usr/share/nginx/html/
+          command: cp ./build/* /var/www/html/
       - run:
           name: Test
-          command: cd e2e && nightwatch
+          command: npm run test:ci:e2e
+      - store_artifacts:
+          path: e2e/reports
 
   automerge:
     docker:
@@ -64,8 +67,8 @@ workflows:
     jobs:
       - test
       - e2e:
-        requires:
-          - test
+          requires:
+            - test
       - automerge:
           requires:
             - e2e

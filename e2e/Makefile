@@ -1,5 +1,5 @@
 NGINX_VERSION=1.17.1-alpine
-HOST_PORT=8088
+HOST_PORT=80
 
 all: run
 
@@ -9,7 +9,4 @@ run: stop
 
 stop:
 	-docker stop nginx-mock
-
-test:
-	docker run --rm -it circleci/node:10.16.0-browsers /bin/sh
 

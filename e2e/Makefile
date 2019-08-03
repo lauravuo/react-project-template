@@ -9,3 +9,7 @@ run: stop
 
 stop:
 	-docker stop nginx-mock
+
+test:
+	docker run --rm -it circleci/node:10.16.0-browsers /bin/sh
+

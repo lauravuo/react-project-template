@@ -1,6 +1,5 @@
 version: 2
 jobs:
-
   test:
     docker:
       - image: circleci/node:10.16.0
@@ -10,7 +9,7 @@ jobs:
 
       - restore_cache:
           keys:
-          - npm-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - npm-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
 
       - run: npm ci
       - run: npm run test
@@ -20,6 +19,31 @@ jobs:
             - $HOME/.npm
           key: npm-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
 
+  e2e:
+    docker:
+      - image: circleci/node:10.16.0-browsers
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - npm-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      - run:
+        name: Install nginx
+        command: sudo apt-get update && sudo apt-get install nginx
+      - run:
+          name: Install deps
+          command: npm ci
+      - run:
+          name: Build
+          command: npm run build
+      - run:
+          name: Copy files
+          command: cp ./build/* /usr/share/nginx/html/
+      - run:
+          name: Test
+          command: cd e2e && nightwatch
+
   automerge:
     docker:
       - image: circleci/node:10.16.0
@@ -28,7 +52,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - npm-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - npm-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run: npm ci
       - run:
           name: Merge greenkeeper branch
@@ -39,9 +63,12 @@ workflows:
   test:
     jobs:
       - test
+      - e2e:
+        requires:
+          - test
       - automerge:
           requires:
-            - test
+            - e2e
           filters:
             branches:
               only: /greenkeeper\S*/

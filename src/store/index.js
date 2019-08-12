@@ -8,7 +8,9 @@ import createRootReducer from './reducers';
 import rootEpic from './epics';
 
 const composeEnhancers = composeWithDevTools({});
-export const history = createBrowserHistory();
+export const history = createBrowserHistory({
+  basename: process.env.PUBLIC_URL
+});
 
 const epicMiddleware = createEpicMiddleware();
 

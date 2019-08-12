@@ -2,6 +2,7 @@
   "name": "TODO",
   "version": "1.0.0",
   "description": "TODO",
+  "homepage": "https://lauravuo.github.io/react-project-template",
   "main": "src/index.js",
   "scripts": {
     "build": "rimraf build/ && webpack --config ./webpack/prod.js",

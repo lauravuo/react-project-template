@@ -20,6 +20,6 @@
       "error",
       { "devDependencies": ["**/*stories.js", "**/*test.js", "webpack/*"] }
     ],
-    "import/prefer-default-export": false
+    "import/prefer-default-export": "warn"
   }
 }

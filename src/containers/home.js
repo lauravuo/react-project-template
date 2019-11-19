@@ -22,7 +22,4 @@ const mapDispatchToProps = dispatch => ({
   doButtonPress: () => dispatch(buttonPress())
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

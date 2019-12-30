@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 
 const buildFolderPath = path.resolve(__dirname, '../build');
 
@@ -39,6 +40,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'TODO',
       template: './webpack/template.html'
-    })
+    }),
+    new webpack.DefinePlugin({ CONFIG: JSON.stringify(require('config')) })
   ]
 };

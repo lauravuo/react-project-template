@@ -5,7 +5,10 @@ import { connect } from 'react-redux';
 import User from '../components/user';
 
 const Page = ({ user }) => (
-  <div>{user && <User name={user.name} location={user.location} />}</div>
+  <div>
+    {user && <User name={user.name} location={user.location} />}
+    <div>{CONFIG.setting}</div>
+  </div>
 );
 
 Page.propTypes = {

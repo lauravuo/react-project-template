@@ -2,7 +2,7 @@ version: 2
 jobs:
   test:
     docker:
-      - image: circleci/node:10.16.0
+      - image: circleci/node:12.14.0
 
     steps:
       - checkout
@@ -21,7 +21,7 @@ jobs:
 
   e2e:
     docker:
-      - image: circleci/node:10.16.0-browsers
+      - image: circleci/node:12.14.0-browsers
         user: root
 
     steps:
@@ -49,7 +49,7 @@ jobs:
 
   automerge:
     docker:
-      - image: circleci/node:10.16.0
+      - image: circleci/node:12.14.0
 
     steps:
       - checkout

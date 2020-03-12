@@ -2,7 +2,7 @@
 
 exports[`Storyshots Button not pressed 1`] = `
 <button
-  className="style__Container-sc-1dzpyiu-0 dMybpA"
+  className="style__Container-sc-1dzpyiu-0 ivmhgl"
   onClick={[Function]}
   type="button"
 >
@@ -15,7 +15,7 @@ exports[`Storyshots Button not pressed 1`] = `
 
 exports[`Storyshots Button pressed 1`] = `
 <button
-  className="style__Container-sc-1dzpyiu-0 cfRxvo"
+  className="style__Container-sc-1dzpyiu-0 fRsRXk"
   onClick={[Function]}
   type="button"
 >

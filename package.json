@@ -59,7 +59,7 @@
     "@storybook/addon-storyshots": "5.3.14",
     "@storybook/react": "5.3.14",
     "babel-core": "7.0.0-bridge.0",
-    "babel-loader": "8.0.6",
+    "babel-loader": "8.1.0",
     "babel-plugin-styled-components": "1.10.7",
     "chromedriver": "80.0.1",
     "circleci-automerge": "1.1.0",

@@ -11,15 +11,15 @@ const Home = ({ buttonIsPressed, doButtonPress }) => (
 
 Home.propTypes = {
   buttonIsPressed: PropTypes.bool.isRequired,
-  doButtonPress: PropTypes.func.isRequired
+  doButtonPress: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ button: { pressed } }) => ({
-  buttonIsPressed: pressed
+  buttonIsPressed: pressed,
 });
 
-const mapDispatchToProps = dispatch => ({
-  doButtonPress: () => dispatch(buttonPress())
+const mapDispatchToProps = (dispatch) => ({
+  doButtonPress: () => dispatch(buttonPress()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

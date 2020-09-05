@@ -1,7 +1,7 @@
 export default {
   button: {
-    pressed: false
+    pressed: false,
   },
   user: null,
-  error: null
+  error: null,
 };

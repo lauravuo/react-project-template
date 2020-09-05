@@ -12,15 +12,15 @@ const Page = ({ user }) => (
 );
 
 Page.propTypes = {
-  user: PropTypes.object
+  user: PropTypes.object,
 };
 
 Page.defaultProps = {
-  user: null
+  user: null,
 };
 
 const mapStateWithProps = ({ user }) => ({
-  user
+  user,
 });
 
 export default connect(mapStateWithProps)(Page);

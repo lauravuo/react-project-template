@@ -1,4 +1,4 @@
-import { empty, of } from 'rxjs';
+import { of } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 import { map, mergeMap, switchMap, catchError, filter } from 'rxjs/operators';
 import { combineEpics, ofType } from 'redux-observable';

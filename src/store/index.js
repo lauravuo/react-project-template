@@ -9,7 +9,7 @@ import rootEpic from './epics';
 
 const composeEnhancers = composeWithDevTools({});
 export const history = createBrowserHistory({
-  basename: process.env.PUBLIC_URL
+  basename: process.env.PUBLIC_URL,
 });
 
 const epicMiddleware = createEpicMiddleware();

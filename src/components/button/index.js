@@ -12,7 +12,7 @@ const Button = ({ pressed, onPress }) => (
 
 Button.propTypes = {
   pressed: PropTypes.bool.isRequired,
-  onPress: PropTypes.func.isRequired
+  onPress: PropTypes.func.isRequired,
 };
 
 export default Button;

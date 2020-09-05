@@ -9,7 +9,7 @@ describe('button reducer', () => {
   it('should toggle pressed state', () => {
     expect(reducer(undefined, buttonPress())).toEqual({
       ...initialState.button,
-      pressed: true
+      pressed: true,
     });
   });
 });

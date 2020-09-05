@@ -4,7 +4,7 @@ import { connectRouter } from 'connected-react-router';
 import {
   BUTTON_PRESSED,
   FETCH_USER_FULFILLED,
-  FETCH_USER_REJECTED
+  FETCH_USER_REJECTED,
 } from './actions';
 import initialState from './initial-state';
 
@@ -35,10 +35,10 @@ export const error = (state = initialState.error, action) => {
   }
 };
 
-export default history =>
+export default (history) =>
   combineReducers({
     router: connectRouter(history),
     button,
     user,
-    error
+    error,
   });

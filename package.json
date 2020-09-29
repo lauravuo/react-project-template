@@ -63,7 +63,6 @@
     "babel-loader": "8.1.0",
     "babel-plugin-styled-components": "^1.11.1",
     "chromedriver": "^85.0.1",
-    "circleci-automerge": "1.1.0",
     "config": "^3.3.2",
     "eslint": "^7.9.0",
     "eslint-config-airbnb": "^18.2.0",

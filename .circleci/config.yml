@@ -1,24 +1,9 @@
-version: 2
+version: 2.1
+
+orbs:
+  node: circleci/node@4.1.0
+
 jobs:
-  test:
-    docker:
-      - image: circleci/node:12.16.1
-
-    steps:
-      - checkout
-
-      - restore_cache:
-          keys:
-            - npm-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
-
-      - run: npm ci
-      - run: npm run test
-
-      - save_cache:
-          paths:
-            - $HOME/.npm
-          key: npm-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
-
   e2e:
     docker:
       - image: circleci/node:12.16.1-browsers
@@ -48,10 +33,10 @@ jobs:
           path: e2e/reports
 
 workflows:
-  version: 2
   test:
     jobs:
-      - test
+      - node/test:
+          version: 12.16.1
       - e2e:
           requires:
-            - test
+            - node/test
